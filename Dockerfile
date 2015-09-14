@@ -44,13 +44,6 @@ RUN sed -e 's/;listen\.owner/listen.owner/' -i /etc/php5/fpm/pool.d/www.conf
 RUN sed -e 's/;listen\.group/listen.group/' -i /etc/php5/fpm/pool.d/www.conf
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
-# Xdebug settings.
-RUN \
-  echo xdebug.remote_enable=1 >> /etc/php5/fpm/conf.d/20-xdebug.ini && \
-  echo xdebug.remote_connect_back=1 >> /etc/php5/fpm/conf.d/20-xdebug.ini && \
-  echo xdebug.remote_autostart=0 >> /etc/php5/fpm/conf.d/20-xdebug.ini && \
-  echo xdebug.max_nesting_level=256 >> /etc/php5/fpm/conf.d/20-xdebug.ini
-
 WORKDIR /app
 
 CMD ["/usr/bin/supervisord", "-n"]
