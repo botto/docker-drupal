@@ -36,6 +36,7 @@ RUN ln -sf /root/.composer/vendor/bin/drush.php /usr/local/bin/drush
 
 ADD build/etc/nginx/sites-available/default /etc/nginx/sites-available/default
 ADD build/etc/php5/fpm/pool.d/www.conf /etc/php5/fpm/pool.d/www.conf
+ADD build/etc/php5/fpm/php-fpm.conf /etc/php5/fpm/php-fpm.conf
 ADD build/etc/supervisor/conf.d/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 RUN sed -e 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' -i /etc/php5/fpm/php.ini
