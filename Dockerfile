@@ -20,8 +20,8 @@ RUN apt-get install php5-fpm
 RUN apt-get install php5-cli
 RUN apt-get install php5-sqlite
 RUN apt-get install php5-gd
-RUN apt-get install php5-mysql 
-RUN apt-get install php5-xdebug 
+RUN apt-get install php5-mysql
+RUN apt-get install php5-memcache
 RUN apt-get install mariadb-client
 RUN apt-get install supervisor
 
